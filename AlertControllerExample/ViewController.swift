@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             let realm = try Realm()
             print(Realm.Configuration.defaultConfiguration.fileURL)
             try realm.write {
-                realm.delete(stock)
+                realm.add(stock, update: .modified)
             }
         }
         catch{
